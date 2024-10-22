@@ -8,7 +8,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         /// the proxy works for all the routes with /api
-        target: "https://jobmonster-backend.onrender.com", //// This is server origin or port
+        target: "https://localhost:3000", //// This is server origin or port
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""), //// This removes the api prefix or origin and replaces with blank
       },
