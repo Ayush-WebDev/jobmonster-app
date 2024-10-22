@@ -18,6 +18,7 @@ const path = require("path");
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
+app.use(express.static(path.resolve(__dirname, "./client/dist")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.JWT_SECRET));
