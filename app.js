@@ -30,7 +30,7 @@ app.use("/api/v1/auth", authRouter);
 //   res.sendFile(path.resolve(__dirname, "./client/dist", "index.html"));
 // });
 app.use("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./client/dist"));
+  res.sendFile(path.resolve(__dirname, "./client/dist", "index.html"));
 });
 app.use(notFoundMiddleware, errorHandlerMiddleware);
 configSettings;
