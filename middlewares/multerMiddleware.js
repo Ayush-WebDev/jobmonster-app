@@ -9,5 +9,4 @@ const formatImage = (file) => {
   const fileExtenstion = path.extname(file.originalname).toString();
   return parser.format(fileExtenstion, file.buffer).content;
 };
-module.exports = { formatImage };
-module.exports = upload;
+module.exports = { formatImage, upload };

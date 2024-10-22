@@ -22,7 +22,7 @@ const register = async (req, res) => {
   // const protocol = req.protocol;
   // const host = req.get('host');
   // const forwardedHost = req.get('x-forwarded-host');
-  // const forwardedProtocol = req.get('x-forwarded-proto');
+  // const forwardedProtocol = req.get('xup-forwarded-proto');
   const { firstName, lastName, email, password, location } = req.body;
   const user = await User.create({
     firstName,

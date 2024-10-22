@@ -21,7 +21,7 @@ const {
   authorizedUserMiddleware,
   checkTestUser,
 } = require("../middlewares/authMiddleware");
-const upload = require("../middlewares/multerMiddleware");
+const { upload } = require("../middlewares/multerMiddleware");
 
 //**We need to add proxy to connect backend with frontend as it is important to have server and frontend on the same server */
 //** also because we are sending cookies and cookie can only be send with same domains */
