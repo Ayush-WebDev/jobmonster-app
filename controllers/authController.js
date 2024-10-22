@@ -10,6 +10,7 @@ const Token = require("../model/token");
 const Job = require("../model/jobModel");
 const cloudinary = require("cloudinary").v2;
 const fs = require("fs");
+const { formatImage } = require("../middlewares/multerMiddleware");
 
 /** Register User **/
 const register = async (req, res) => {
@@ -138,9 +139,8 @@ const updateUser = async (req, res) => {
     );
   const file = req.file;
   if (file) {
-    const response = await cloudinary.uploader.upload(req.file.path);
-    fs.unlinkSync(req.file.path);
-    //console.log(response, req.file);
+    const newFile = formatImage(file);
+    const response = await cloudinary.uploader.upload(newFile);
     updatedUser.avatar = response.secure_url;
     updatedUser.avatarPublicId = response.public_id;
   }
